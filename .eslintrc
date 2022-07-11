@@ -1,0 +1,44 @@
+{
+  "root": true,
+  "env": { "browser": true, "es6": true, "node": true },
+  "extends": ["airbnb", "plugin:prettier/recommended"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": { "ecmaVersion": 2020, "requireConfigFile": false },
+  "rules": {
+    "max-len": ["error", { "code": 120, "ignoreComments": true }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint", "react", "prettier", "import"],
+      "extends": [
+        "airbnb-typescript",
+        "prettier",
+        "plugin:import/recommended",
+        "plugin:prettier/recommended",
+        "plugin:react-hooks/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "ecmaFeatures": { "jsx": true },
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "prettier/prettier": ["error"],
+        "curly": ["error", "all"],
+        "no-param-reassign": ["error", { "ignorePropertyModificationsFor": ["state"] }],
+        "import/no-extraneous-dependencies": "off",
+        "import/prefer-default-export": "off",
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-use-before-define": "off"
+      }
+    }
+  ]
+}
