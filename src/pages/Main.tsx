@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { useRecoilValue } from 'recoil';
+import TrackState from '../atom/TrackState';
 import SearchModal from '../components/modal/SearchModal';
 
 function MainPage() {
   const [show, setShow] = useState<boolean>(false);
-
+  const track = useRecoilValue(TrackState);
+  console.log(track);
   const handleClose = () => {
     setShow(false);
   };
