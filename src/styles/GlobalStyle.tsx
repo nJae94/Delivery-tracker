@@ -12,6 +12,14 @@ export const ResetCss = css`
     box-sizing: border-box;
     width: 100%;
   }
+
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+  }
 `;
 
 function GlobalStyle() {
