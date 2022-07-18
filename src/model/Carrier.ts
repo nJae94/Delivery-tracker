@@ -9,6 +9,17 @@ export interface CarrierForm {
   name: string;
 }
 
+export interface Progresses {
+  description: string;
+  location: {
+    name: string;
+  };
+  status: {
+    id: string;
+    text: string;
+  };
+  time: string;
+}
 export interface Track {
   from: {
     name: string;
@@ -23,4 +34,5 @@ export interface Track {
     text: string;
   };
   carrier: Carrier;
+  progresses: Progresses[];
 }
